@@ -1,15 +1,9 @@
-import UsersList from './../mocks/UsersList'
+import RenderUserList from "../components/RenderUserList"
 
 function UserList() {
     return (
-        <div className='UserList'>
-            <h1>Lista de usuários</h1>
-            {UsersList.map((UsersList, id) => (
-                    <div>
-                    <p><strong>{UsersList.Nome}</strong> - {UsersList.Cargo}
-                    </p>             
-                    </div>
-                ))}
+        <div>
+            <RenderUserList />
         </div>
     )
 }
