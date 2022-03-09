@@ -1,4 +1,4 @@
-.userList {
+.about {
     padding: 10px;
     padding-top: 3px;
     margin-top: 0;
@@ -6,13 +6,15 @@
     background-color: white;
     min-width: 400px;
     max-width: 800px;
-    text-indent: 5px;
 }
 
-.userList > h1 {
+.about > h2 {
     text-align: center;
 }
 
-button {
-    border-radius: 5px;
+p {
+    padding: 0px 15px;
+    text-indent: 10px;
+    text-align: justify;
 }
+

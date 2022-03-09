@@ -6,8 +6,10 @@ const UsersList = [
         situation: 'ADMITIDO',
         admissionDate: '10/02/2022',
         integrationDate: '14/02/2022',
-        team: 'Academy',
-        client: 'BMW',
+        team: { name: 'Academy',
+                id: '1',
+                client: 'BMW',
+            }
     },
     {
         id: '2',
@@ -16,8 +18,9 @@ const UsersList = [
         situation: 'ADMITIDO',
         admissionDate: '14/03/2020',
         integrationDate: '21/03/2020',
-        team: 'Labs',
-        client: 'AgiBank',
+        team: { name: 'Labs',
+                id:'2',
+                client:'AgiBank',}
     },
     {
         id: '3',
@@ -26,8 +29,9 @@ const UsersList = [
         situation: 'ADMITIDO',
         admissionDate: '05/04/2021',
         integrationDate: '12/04/2021',
-        team: 'Labs',
-        client: 'BMW',
+        team: { name: 'Labs',
+                id: '3',
+                client: 'BMW',}
     },
     {
         id: '4',
@@ -36,8 +40,9 @@ const UsersList = [
         situation: 'DESLIGADO',
         admissionDate: '18/10/2019',
         integrationDate: '25/10/2019',
-        team: 'Labs',
-        client: 'ADP',
+        team: { name: 'Labs',
+                id: '4',
+                client: 'ADP',}
     },
     {
         id: '5',
@@ -46,8 +51,9 @@ const UsersList = [
         situation: 'ADMITIDO',
         admissionDate: '17/01/2022',
         integrationDate: '21/01/2022',
-        team: 'Academy',
-        client: 'BMW',
+        team: { name: 'Academy',
+                id: '5',
+                client: 'BMW',}
     },
     {
         id: '6',
@@ -56,8 +62,9 @@ const UsersList = [
         situation: 'AGUARDANDO_DOCUMENTACAO',
         admissionDate: 'YYYY/MM/DD',
         integrationDate: 'YYYY/MM/DD',
-        team: 'Labs',
-        client: 'Lebes',
+        team: { name: 'Labs',
+                id:'6',
+                client: 'Lebes',}
     },
     {
         id: '7',
@@ -66,8 +73,9 @@ const UsersList = [
         situation: 'ADMITIDO',
         admissionDate: '11/05/2018',
         integrationDate: '11/06/2018',
-        team: 'RH',
-        client: 'Renner',
+        team: { name: 'RH',
+                id: '7',
+                client: 'Renner',}
     },
     {
         id: '8',
@@ -76,8 +84,9 @@ const UsersList = [
         situation: 'ADMITIDO',
         admissionDate: '01/05/2014',
         integrationDate: '01/05/2014',
-        team: 'Diretores',
-        client: '',
+        team: { name: 'Diretores',
+                id: '8',
+                client: '',}
     },
     {
         id: '9',
@@ -86,8 +95,9 @@ const UsersList = [
         situation: 'ADMITIDO',
         admissionDate: '17/01/2022',
         integrationDate: '21/01/2022',
-        team: 'Academy',
-        client: 'BMW',
+        team: { name: 'Academy',
+                id: '9',
+                client: 'BMW',}
     },
     {
         id: '10',
@@ -96,8 +106,9 @@ const UsersList = [
         situation: 'ADMITIDO',
         admissionDate: '17/01/2022',
         integrationDate: '21/01/2022',
-        team: 'Academy',
-        client: 'BMW',
+        team: { name: 'Academy',
+                id: '10',
+                client: 'BMW',}
     },
 ]
 

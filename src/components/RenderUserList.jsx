@@ -1,19 +1,21 @@
-import UsersList from "../mocks/UsersList"
 import styles from './RenderUserList.module.css'
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 
-function RenderUserList() {
+function RenderUserList({list}) {
+
+    
     return(
         <div className={styles.userList}>
             <h1>Lista de usuários</h1>
-            {UsersList.map((UsersList, id) => (
+            {list.map((user, id) => (
                     <div>
-                    <p><Link to="/user" className={styles.item}>{UsersList.name}</Link> - {UsersList.office}
+                    <p><strong>{user.name}</strong> - {user.office} <Link to="/user"><button>ver mais</button></Link>
                     </p>
                     </div>
                 ))}
         </div>
     )
 }
+
 
 export default RenderUserList

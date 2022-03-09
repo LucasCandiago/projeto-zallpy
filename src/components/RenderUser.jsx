@@ -11,9 +11,9 @@ export default function RenderUser() {
                 <p>Situação: {UsersList.situation}</p>
                 <p>Data de Admissão: {UsersList.admissionDate}</p>
                 <p>Data de Integração: {UsersList.integrationDate}</p>
-                <p>Time: {UsersList.team}</p>
-                <p>Cliente: {UsersList.client}</p>
-                <br></br>
+                <p>Time: {UsersList.team.name}</p>
+                <p>Cliente: {UsersList.team.client}</p>
+                <br/>
                 </div>
             ))}
         </div>
