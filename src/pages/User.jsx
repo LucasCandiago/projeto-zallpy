@@ -1,9 +1,19 @@
 import RenderUser from "../components/RenderUser"
+import UsersList from "../mocks/UsersList";
+import { useState, useEffect } from "react";
 
 function User() {
-    return(
+    const [ userList, setUserList ] = useState([]);    
+
+    function getUser(){
+        setUserList(UsersList)
+    }
+
+    useEffect(() => {getUser()},[])
+
+    return (
         <div>
-            <RenderUser/>
+            <RenderUser list={userList}/>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import UsersList from "../mocks/UsersList"
 import RenderUserList from "../components/RenderUserList"
 import { useEffect, useState } from "react"
+import userService from "../service/userService";
 
 function UserList() {
     
