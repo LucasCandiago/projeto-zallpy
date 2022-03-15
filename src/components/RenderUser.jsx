@@ -9,10 +9,10 @@ export default function RenderUser({list}) {
     
     return(
         <div className={styles.user}>
-            {list.map((user, id) => (
+            {list.map((user) => (
                 <div>
                 <p>Nome: {user.name}</p>
-                <p>Cargo: {user.tittle.name}</p>
+                <p>Cargo: {user.titleJob.name}</p>
 
                 {user.situation === 'ADMITIDO' ? (
                     <p>Situação: Admitido</p>
@@ -25,13 +25,13 @@ export default function RenderUser({list}) {
                 <p>Data de Admissão: {user.newDate}</p>
                 <p>Data de Integração: {user.newIntDate}</p>
 
-                {user.team.length > 1 ? (
-                        <p>Time: {user.team[0].name}, {user.team[1].name}</p>
-                    ): (
-                        <p>Time: {user.team[0].name}</p>
-                    )}
-                
-                <p>Cliente: {user.team[0].client}</p>
+                <p>Times: {user.team.map((id) => (
+                    <>{id.name}, </>
+                ))}</p>
+            
+                <p>Clientes: {user.team.map((id) => (
+                    <>{id.client}, </>
+                ))}</p>
                 <br/>
                 </div>
             ))}

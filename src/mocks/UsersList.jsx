@@ -2,27 +2,28 @@ const UsersList = [
     {
         id: '1',
         name: 'Gabriel Bueno',
-        tittle: {
+        titleJob: {
             name: 'Estagiário em Desenvolvimento Web',
             id: '1',
         },
         situation: 'ADMITIDO',
         admissionDate: '2022-02-10',
         integrationDate: '2022-02-14',
-        team: [ { name: 'Academy',
-                id: '1',
-                client: 'BMW',
+        team: [ 
+            { name: 'Academy',
+              id: '1',
+              client: 'BMW',
             },
             { name: 'Academy 2',
-                id: '1',
-                client: 'BMW',
+              id: '1',
+              client: 'BMW',
             },
         ]
     },
     {
         id: '2',
         name: 'Bruno Araújo',
-        tittle: {
+        titleJob: {
             name: 'Mentor',
             id: '2',},
         situation: 'ADMITIDO',
@@ -30,12 +31,16 @@ const UsersList = [
         integrationDate: '2020-03-21',
         team: [ { name: 'Labs',
                 id:'2',
-                client:'AgiBank',}]
+                client:'AgiBank',},
+                { name: 'Academy',
+                id: '1',
+                client: 'BMW',
+              },]
     },
     {
         id: '3',
         name: 'Débora Siqueira',
-        tittle: {
+        titleJob: {
             name: 'Desenvolvedora Web Junior',
             id: '3',},
         situation: 'ADMITIDO',
@@ -48,7 +53,7 @@ const UsersList = [
     {
         id: '4',
         name: 'Jefferson dos Santos',
-        tittle: {
+        titleJob: {
             name: 'Desenvolvedor Java Pleno',
             id: '4',},
         situation: 'DESLIGADO',
@@ -61,7 +66,7 @@ const UsersList = [
     {
         id: '5',
         name: 'Lucas Teixeira',
-        tittle: {
+        titleJob: {
             name: 'Estagiário em Desenvolvimento Web',
             id: '5',},
         situation: 'ADMITIDO',
@@ -74,7 +79,7 @@ const UsersList = [
     {
         id: '6',
         name: 'André Freitas',
-        tittle: {
+        titleJob: {
             name: 'Gestor de TI',
             id: '6',},
         situation: 'AGUARDANDO_DOCUMENTACAO',
@@ -87,7 +92,7 @@ const UsersList = [
     {
         id: '7',
         name: 'Juliana Costa',
-        tittle: {
+        titleJob: {
             name: 'Gestora de RH',
             id: '7',},
         situation: 'ADMITIDO',
@@ -100,7 +105,7 @@ const UsersList = [
     {
         id: '8',
         name: 'Marcelo Castro',
-        tittle: {
+        titleJob: {
             name: 'CEO',
             id: '8',},
         situation: 'ADMITIDO',
@@ -113,7 +118,7 @@ const UsersList = [
     {
         id: '9',
         name: 'Lucas Oliveira',
-        tittle: {
+        titleJob: {
             name: 'Estagiário em Desenvolvimento Web',
             id: '9',},
         situation: 'ADMITIDO',
@@ -126,7 +131,7 @@ const UsersList = [
     {
         id: '10',
         name: 'Cristian Caramori',
-        tittle: {
+        titleJob: {
             name: 'Estagiário em Desenvolvimento Web',
             id: '10',},
         situation: 'ADMITIDO',

@@ -5,7 +5,7 @@
     margin: auto;
     background-color: white;
     min-width: 450px;
-    max-width: 1050px;
+    max-width: 1350px;
     text-indent: 5px;
 }
 
@@ -15,6 +15,7 @@ body {
 
 table {
     border-collapse: collapse;
+    width: 1350px;
 }
 
 caption {
@@ -42,4 +43,11 @@ tr:nth-child(even) {
 
 .desligado {
     background-color: rgba(255, 0, 0, 0.609);
+}
+
+.team {
+    padding: 0px;
+    margin: 0px 10px;
+    text-indent: 0px;
+    font-size: 1em;
 }

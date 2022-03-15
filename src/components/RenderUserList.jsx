@@ -1,15 +1,68 @@
 import styles from './RenderUserList.module.css'
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import Input from './Input'
 
 function RenderUserList({list}) {
     
-    list.map((user) => (
+    const [searchText, setSearchText] = useState('');
+
+    const [searchTitleJob, setSearchTitleJob] = useState('')
+
+    const [ userList, setUserList ] = useState(list);    
+
+    useEffect(() => {
+        if(searchText === '') {
+            setUserList(list);
+        } else {
+            setUserList(
+                list.filter(item => {
+                    if(item.name.toLowerCase().indexOf(searchText.toLowerCase()) > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                })
+            )
+        }
+    }, [searchText]);
+
+    useEffect(() => {
+        if(searchTitleJob === '') {
+            setUserList(list);
+        } else {
+            setUserList(
+                list.filter(item => {
+                    if(item.titleJob.name.toLowerCase().indexOf(searchTitleJob.toLowerCase()) > -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                })
+            )
+        }
+    }, [searchTitleJob]);
+
+    userList.map((user) => (
         user.newDate = user.admissionDate.split('-').reverse().join('/'),
         user.newIntDate = user.integrationDate.split('-').reverse().join('/')
     ))
 
     return(
         <div className={styles.userList}>
+
+            <Input
+            type="text"
+            placeholder="Pesquise uma pessoa"
+            value={searchText}
+            onChange={(t) => (setSearchText(t.target.value))} /> 
+            
+            <Input
+            type="text"
+            placeholder="Pesquise por cargo"
+            value={searchTitleJob}
+            onChange={(t) => (setSearchTitleJob(t.target.value))} /> 
+
             <table>
                 <caption>Funcionários</caption>
                 <thead>
@@ -25,10 +78,10 @@ function RenderUserList({list}) {
                     </tr>
                 </thead>
                 <tbody>
-                    {list.map((user) => (
+                    {userList.map((user) => (
                     <tr>
                     <td>{user.name}</td>
-                    <td>{user.tittle.name}</td>
+                    <td>{user.titleJob.name}</td>
 
                     {user.situation === 'ADMITIDO' ? (
                         <td className={styles.admitido}>Admitido</td>
@@ -40,12 +93,15 @@ function RenderUserList({list}) {
 
                     <td>{user.newDate}</td>
                     <td>{user.newIntDate}</td>
-                    {user.team.length > 1 ? (
-                        <td>{user.team[0].name}, {user.team[1].name}</td>
-                    ): (
-                        <td>{user.team[0].name}</td>
-                    )}
-                    <td>{user.team[0].client}</td>
+                        
+                    <td>{user.team.map((id) => (
+                        <p className={styles.team}>{id.name}</p>
+                    ))}</td>
+                
+                    <td>{user.team.map((id) => (
+                        <p className={styles.team}>{id.client}</p>
+                    ))}</td>
+
                     <td><Link to="/user"><button>ver mais</button></Link></td>
                     </tr>
                     ))}
