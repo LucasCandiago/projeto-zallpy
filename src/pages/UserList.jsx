@@ -1,5 +1,5 @@
 import UsersList from "../mocks/UsersList"
-import RenderUserList from "../components/RenderUserList"
+import RenderUserList from "../components/RenderUserList/RenderUserList"
 import userService from "../service/userService";
 
 function UserList() {

@@ -1,13 +1,13 @@
-import styles from './Input.module.css'
+import { Filter } from "./styled/Input"
 
 function Input({ type, placeholder, value, onChange }) {
+    
     return (
-        <input
+        <Filter
             type={type}
             placeholder={placeholder}
             value={value}
-            onChange={onChange}
-            className={styles.input} />
+            onChange={onChange} />
     )
 }
 

@@ -1,4 +1,4 @@
-import RenderUser from "../components/RenderUser"
+import RenderUser from "../components/RenderUser/RenderUser"
 import UsersList from "../mocks/UsersList";
 import { useState, useEffect } from "react";
 

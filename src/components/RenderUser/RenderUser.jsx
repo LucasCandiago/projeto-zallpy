@@ -1,4 +1,4 @@
-import styles from './RenderUser.module.css'
+import { ListUser } from "./styled/RenderUser"
 
 export default function RenderUser({list}) {
     
@@ -8,7 +8,7 @@ export default function RenderUser({list}) {
     ))
     
     return(
-        <div className={styles.user}>
+        <ListUser>
             {list.map((user) => (
                 <div>
                 <p>Nome: {user.name}</p>
@@ -26,16 +26,16 @@ export default function RenderUser({list}) {
                 <p>Data de Integração: {user.newIntDate}</p>
 
                 <p>Times: {user.team.map((id) => (
-                    <>{id.name}, </>
+                    <>-{id.name} </>
                 ))}</p>
             
-                <p>Clientes: {user.team.map((id) => (
-                    <>{id.client}, </>
+                <p>Clientes: {user.client.map((id) => (
+                    <>-{id.clientName} </>
                 ))}</p>
                 <br/>
                 </div>
             ))}
-        </div>
+        </ListUser>
     )
 }
 
