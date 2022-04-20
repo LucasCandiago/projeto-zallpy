@@ -1,14 +1,12 @@
-import UsersList from "../mocks/UsersList"
-import RenderUserList from "../components/RenderUserList/RenderUserList"
-import userService from "../service/userService";
+import UsersList from "../mocks/UsersList";
+import RenderUserList from "../components/RenderUserList/RenderUserList";
 
 function UserList() {
-
-    return (
-        <div>
-            <RenderUserList list={UsersList} />
-        </div>
-    )
+  return (
+    <div>
+      <RenderUserList list={UsersList} />
+    </div>
+  );
 }
 
-export default UserList
+export default UserList;

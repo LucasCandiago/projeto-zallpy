@@ -1,21 +1,11 @@
-import RenderUser from "../components/RenderUser/RenderUser"
-import UsersList from "../mocks/UsersList";
-import { useState, useEffect } from "react";
+import RenderUser from "../components/RenderUser/RenderUser";
 
 function User() {
-    const [ userList, setUserList ] = useState([]);    
-
-    function getUser(){
-        setUserList(UsersList)
-    }
-
-    useEffect(() => {getUser()},[])
-
-    return (
-        <div>
-            <RenderUser list={userList}/>
-        </div>
-    )
+  return (
+    <div>
+      <RenderUser />
+    </div>
+  );
 }
 
-export default User
+export default User;

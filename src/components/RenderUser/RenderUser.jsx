@@ -1,41 +1,62 @@
-import { ListUser } from "./styled/RenderUser"
+import { ListUser } from "./styled/RenderUser";
+import { useLocation, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-export default function RenderUser({list}) {
-    
-    list.map((user) => (
-        user.newDate = user.admissionDate.split('-').reverse().join('/'),
-        user.newIntDate = user.integrationDate.split('-').reverse().join('/')
-    ))
-    
-    return(
-        <ListUser>
-            {list.map((user) => (
-                <div>
-                <p>Nome: {user.name}</p>
-                <p>Cargo: {user.titleJob.name}</p>
+export default function RenderUser() {
+  const [name, setName] = useState();
+  const [situation, setSituation] = useState();
+  const [admissionDate, setAdmissionDate] = useState();
+  const [integrationDate, setIntegrationDate] = useState();
+  const [titleJob, setTitleJob] = useState([]);
+  const [team, setTeam] = useState([]);
+  const [client, setClient] = useState([]);
 
-                {user.situation === 'ADMITIDO' ? (
-                    <p>Situação: Admitido</p>
-                ) : user.situation === 'AGUARDANDO_DOCUMENTACAO' ? (
-                    <p>Situação: Aguardando Documentação</p>
-                ) : (
-                    <p>Situação: Desligado</p>
-                )}
-                
-                <p>Data de Admissão: {user.newDate}</p>
-                <p>Data de Integração: {user.newIntDate}</p>
+  const location = useLocation();
 
-                <p>Times: {user.team.map((id) => (
-                    <>-{id.name} </>
-                ))}</p>
-            
-                <p>Clientes: {user.client.map((id) => (
-                    <>-{id.clientName} </>
-                ))}</p>
-                <br/>
-                </div>
-            ))}
-        </ListUser>
-    )
+  useEffect(() => {
+    setName(location.state.dados.name);
+    setSituation(location.state.dados.situation);
+    setAdmissionDate(location.state.dados.admissionDate);
+    setIntegrationDate(location.state.dados.integrationDate);
+    setTitleJob(location.state.dados.titleJob);
+    setTeam(location.state.dados.team);
+    setClient(location.state.dados.client);
+  }, []);
+  return (
+    <ListUser>
+      <div>
+        <h2>{name}</h2>
+        <p>Cargo: {titleJob.name}</p>
+
+        {situation === "ADMITIDO" ? (
+          <p>Situação: Admitido ✔️</p>
+        ) : situation === "AGUARDANDO_DOCUMENTACAO" ? (
+          <p>Situação: Aguardando Documentação ⚠️</p>
+        ) : (
+          <p>Situação: Desligado ❌</p>
+        )}
+
+        <p>Data de Admissão: {admissionDate}</p>
+        <p>Data de Integração: {integrationDate}</p>
+
+        <div>Times: </div>
+        {team.map((id) => (
+          <div>-{id.name} </div>
+        ))}
+
+        <br />
+
+        <div>Clientes: </div>
+        {client.map((id) => (
+          <div>-{id.clientName} </div>
+        ))}
+
+        <br />
+
+        <button>
+          <Link to="/userList">Ver a Lista Completa</Link>
+        </button>
+      </div>
+    </ListUser>
+  );
 }
-
